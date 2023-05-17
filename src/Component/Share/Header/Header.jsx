@@ -22,11 +22,11 @@ const Header = () => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Nav.Link className='fw-semibold mr-5' href="/">Home</Nav.Link>
-                            <Nav.Link className='fw-semibold mr-5' href="/allToy">All Toys</Nav.Link>
-                            <Nav.Link className='fw-semibold mr-5' href="/myToy">My Toy</Nav.Link>
-                            <Nav.Link className='fw-semibold mr-5' href="/addToy">Add A Toy</Nav.Link>
-                            <Nav.Link className='fw-semibold mr-5' href="/blog">Blog</Nav.Link>
+                            <Nav.Link className='fw-semibold me-3' href="/">Home</Nav.Link>
+                            <Nav.Link className='fw-semibold me-3' href="/allToy">All Toys</Nav.Link>
+                            <Nav.Link className='fw-semibold me-3' href="/myToy">My Toy</Nav.Link>
+                            <Nav.Link className='fw-semibold me-3' href="/addToy">Add A Toy</Nav.Link>
+                            <Nav.Link className='fw-semibold me-3' href="/blog">Blog</Nav.Link>
 
 
                         </Nav>
