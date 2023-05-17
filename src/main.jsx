@@ -14,6 +14,8 @@ import AllToys from './Component/Page/AllToy/AllToys.jsx';
 import MyToys from './Component/Page/MyToys/MyToys.jsx';
 import AddToy from './Component/Page/AddToys/AddToy.jsx';
 import Blog from './Component/Page/Blog/Blog.jsx';
+import Login from './Component/Page/Login/Login.jsx';
+import Register from './Component/Page/Register/Register.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -39,6 +41,14 @@ const router = createBrowserRouter([
       {
         path: '/blog',
         element: <Blog></Blog>
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
       }
 
     ]
