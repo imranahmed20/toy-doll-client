@@ -10,6 +10,10 @@ import {
 import Main from './Component/Layout/Main.jsx';
 import Home from './Component/Home/Home.jsx';
 import Error from './Component/Page/Error/Error.jsx';
+import AllToys from './Component/Page/AllToy/AllToys.jsx';
+import MyToys from './Component/Page/MyToys/MyToys.jsx';
+import AddToy from './Component/Page/AddToys/AddToy.jsx';
+import Blog from './Component/Page/Blog/Blog.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,7 +23,24 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>
+      },
+      {
+        path: '/allToy',
+        element: <AllToys></AllToys>
+      },
+      {
+        path: '/myToy',
+        element: <MyToys></MyToys>
+      },
+      {
+        path: '/addToy',
+        element: <AddToy></AddToy>
+      },
+      {
+        path: '/blog',
+        element: <Blog></Blog>
       }
+
     ]
   },
 ]);

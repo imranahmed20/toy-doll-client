@@ -4,8 +4,8 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo from '../../../assets/logo.jpg'
+import { FaUser } from 'react-icons/fa';
 
 const Header = () => {
     return (
@@ -31,7 +31,7 @@ const Header = () => {
 
                         </Nav>
                         <Form className="d-flex">
-                            <Button variant="outline-success">Search</Button>
+                            <FaUser style={{ fontSize: '2rem' }}></FaUser>
                         </Form>
                     </Navbar.Collapse>
                 </Container>
