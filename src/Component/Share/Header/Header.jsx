@@ -44,7 +44,7 @@ const Header = () => {
 
                             {
                                 user ?
-                                    <img style={{ width: '50px', height: '50px' }} title={user?.displayName} className='rounded-circle me-3' src={user?.photoURL} alt="" />
+                                    <img style={{ width: '50px', height: '40px' }} title={user?.displayName} className='rounded-circle me-3' src={user?.photoURL} alt="" />
                                     :
                                     <FaUser className='me-3' style={{ fontSize: '2rem' }}></FaUser>
                             }
