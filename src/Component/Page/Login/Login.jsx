@@ -6,7 +6,7 @@ import { Container } from 'react-bootstrap';
 import login from '../../../image/login2.avif'
 import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../../Provider/AuthProvider';
-import { getAuth } from 'firebase/auth';
+import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../../../Firebase/Firebase';
 
 const auth = getAuth(app)
@@ -16,6 +16,10 @@ const Login = () => {
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || '/'
+
+    const provider = new GoogleAuthProvider()
+
+
     const handleLogin = event => {
         event.preventDefault()
         const form = event.target;
@@ -34,6 +38,17 @@ const Login = () => {
                 setError(error.message)
             })
     }
+    const handleGoogleLogin = () => {
+        signInWithPopup(auth, provider)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                navigate(from)
+            })
+            .catch(error => console.log(error.message))
+
+    }
+
     return (
         <div className='container mt-5'>
             <div className='row row-cols-1 row-cols-md-2'>
@@ -56,7 +71,7 @@ const Login = () => {
                         <p className='mt-3'>Already have an account <Link to="/register">Register</Link></p>
                     </Form>
                     <p className='text-center fw-semibold'>Or</p>
-                    <Button variant="outline-success" className='fw-semibold'><FaGoogle></FaGoogle> Google Login</Button>
+                    <Button onClick={handleGoogleLogin} variant="outline-success" className='fw-semibold'><FaGoogle></FaGoogle> Google Login</Button>
 
                 </div>
                 <div className='col mr-3'>
