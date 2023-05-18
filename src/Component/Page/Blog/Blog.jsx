@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap';
 const Blog = () => {
     return (
         <Container>
+            <h1 className='text-center text-primary mt-5 fw-bold'>Question Part</h1>
             <div className='card p-4 mt-5'>
                 <h3 className='fw-bold'>1. What is an access token and refresh token? How do they work and where should we store them on the client-side?</h3>
                 <p className='fw-semibold'>Access Token: An access token is a credential that is granted to a client (such as a user or an application) by an authentication server. It represents the authorization to access specific resources or perform certain actions on behalf of the client. The access token is usually issued after the client successfully authenticates with the server using their credentials (e.g., username and password) or through other authentication mechanisms like OAuth.
