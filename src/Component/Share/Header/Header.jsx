@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -7,8 +7,16 @@ import Navbar from 'react-bootstrap/Navbar';
 import logo from '../../../assets/logo.jpg'
 import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Provider/AuthProvider';
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext)
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch(error => console.log(error))
+
+    }
     return (
         <Container>
             <Navbar bg="" expand="lg">
@@ -31,8 +39,21 @@ const Header = () => {
 
 
                         </Nav>
+
                         <Form className="d-flex">
-                            <FaUser style={{ fontSize: '2rem' }}></FaUser>
+
+                            {
+                                user ?
+                                    <img style={{ width: '50px', height: '50px' }} title={user?.displayName} className='rounded-circle me-3' src={user?.photoURL} alt="" />
+                                    :
+                                    <FaUser className='me-3' style={{ fontSize: '2rem' }}></FaUser>
+                            }
+                            {user ?
+                                <Button className='fw-semibold' onClick={handleLogOut} variant="primary">logOut</Button> :
+                                <Button variant="primary">
+                                    <Link className='text-white text-decoration-none fw-semibold' to='/login'>Login</Link>
+                                </Button>
+                            }
                         </Form>
                     </Navbar.Collapse>
                 </Container>

@@ -19,7 +19,7 @@ const Register = () => {
         const form = event.target;
         const name = form.name.value;
         const email = form.email.value;
-        const photo = form.email.value;
+        const photo = form.photo.value;
         const password = form.password.value;
         console.log(name, email, photo, password)
         if (password.length < 6) {
@@ -30,7 +30,7 @@ const Register = () => {
                 updateProfile(result.user, { displayName: name, photoURL: photo })
                 const user = result.user;
                 console.log(user)
-                form.reset()
+                form.reset()    
                 navigate('/login')
             })
             .catch(error => {
