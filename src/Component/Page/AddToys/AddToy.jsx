@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../../Provider/AuthProvider';
+import { Navigate } from 'react-router-dom';
+
 
 
 const AddToy = () => {
+    const { user } = useContext(AuthContext)
     const handleAddDoll = event => {
         event.preventDefault()
 
         const form = event.target;
         const name = form.name.value;
         const sellerName = form.sellerName.value;
-        const email = form.email.value;
+        const email = user.email;
         const photo = form.photo.value;
         const quantity = form.quantity.value;
         const price = form.price.value;
@@ -25,7 +29,8 @@ const AddToy = () => {
             rating,
             detail,
             category,
-            photo
+            photo,
+
         }
         console.log(order)
         fetch('http://localhost:5000/orders', {
@@ -39,6 +44,10 @@ const AddToy = () => {
             .then(data => {
                 console.log(data)
             })
+        form.rest()
+
+
+
     }
     return (
         <div className='container mt-5'>
@@ -54,7 +63,7 @@ const AddToy = () => {
                     </div>
                     <div className="col mb-3">
                         <label for="exampleInputEmail1" className="form-label fw-semibold">Email address</label>
-                        <input type="text" name='email' placeholder='Email' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                        <input type="email" name='email' placeholder='Email' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                     </div>
                     <div className="col mb-3">
                         <label for="exampleInputPassword1" className="form-label fw-semibold">Category Name</label>

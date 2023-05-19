@@ -5,11 +5,9 @@ import { Table } from 'react-bootstrap';
 
 const AllToys = () => {
     const orders = useLoaderData()
-    console.log(orders)
     return (
         <div className='container mt-5'>
-
-            <Table  bordered  size="">
+            <Table bordered size="">
                 <thead>
                     <tr>
                         <th>Seller Name</th>

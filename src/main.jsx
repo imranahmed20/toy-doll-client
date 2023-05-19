@@ -19,6 +19,7 @@ import Register from './Component/Page/Register/Register.jsx';
 import AuthProvider from './Provider/AuthProvider.jsx';
 import Detail from './Component/Page/Detail/Detail.jsx';
 import PrivetRouter from './Router/PrivetRouter.jsx';
+import OrderDetail from './Component/Page/OrderDetail/OrderDetail.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -38,6 +39,7 @@ const router = createBrowserRouter([
       {
         path: '/myToy',
         element: <MyToys></MyToys>
+
       },
       {
         path: '/addToy',
@@ -62,17 +64,17 @@ const router = createBrowserRouter([
       },
       {
         path: '/barbie/:id',
-        element: <Detail></Detail>,
+        element: <PrivetRouter><Detail></Detail></PrivetRouter>,
         loader: ({ params }) => fetch(`http://localhost:5000/barbie/${params.id}`)
       },
       {
         path: '/americans/:id',
-        element: <Detail></Detail>,
+        element: <PrivetRouter><Detail></Detail></PrivetRouter>,
         loader: ({ params }) => fetch(`http://localhost:5000/americans/${params.id}`)
       },
       {
         path: '/orders/:id',
-        element: <Detail></Detail>,
+        element: <PrivetRouter><OrderDetail></OrderDetail></PrivetRouter>,
         loader: ({ params }) => fetch(`http://localhost:5000/orders/${params.id}`)
       }
 
