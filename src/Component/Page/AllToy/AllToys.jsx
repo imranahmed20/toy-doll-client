@@ -1,18 +1,34 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import Category from './Category/Category';
+import OrderRow from './OrderRow/OrderRow';
+import { Table } from 'react-bootstrap';
 
 const AllToys = () => {
-    const categories = useLoaderData()
-    console.log(categories)
+    const orders = useLoaderData()
+    console.log(orders)
     return (
-        <div className='container'>
-            <div className='row row-cols-1 row-cols-md-3 g-4 mt-5'>
-                {
-                    categories.map(category => <Category key={category._id} category={category}></Category>)
-                }
-            </div>
+        <div className='container mt-5'>
+
+            <Table  bordered  size="">
+                <thead>
+                    <tr>
+                        <th>Seller Name</th>
+                        <th>Toy Name</th>
+                        <th>Sub-category</th>
+                        <th>Price</th>
+                        <th>Available Quantity</th>
+                        <th>Button</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        orders.map(order => <OrderRow key={order._id} order={order}></OrderRow>)
+                    }
+                </tbody>
+            </Table>
+
         </div>
+
     );
 };
 

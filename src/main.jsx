@@ -18,6 +18,7 @@ import Login from './Component/Page/Login/Login.jsx';
 import Register from './Component/Page/Register/Register.jsx';
 import AuthProvider from './Provider/AuthProvider.jsx';
 import Detail from './Component/Page/Detail/Detail.jsx';
+import PrivetRouter from './Router/PrivetRouter.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
       {
         path: '/allToy',
         element: <AllToys></AllToys>,
-        loader: () => fetch('http://localhost:5000/categories')
+        loader: () => fetch('http://localhost:5000/orders')
       },
       {
         path: '/myToy',
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/addToy',
-        element: <AddToy></AddToy>
+        element: <PrivetRouter><AddToy></AddToy></PrivetRouter>
       },
       {
         path: '/blog',
@@ -56,7 +57,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/categories/:id',
-        element: <Detail></Detail>,
+        element: <PrivetRouter><Detail></Detail></PrivetRouter>,
         loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`)
       },
       {
@@ -69,6 +70,11 @@ const router = createBrowserRouter([
         element: <Detail></Detail>,
         loader: ({ params }) => fetch(`http://localhost:5000/americans/${params.id}`)
       },
+      {
+        path: '/orders/:id',
+        element: <Detail></Detail>,
+        loader: ({ params }) => fetch(`http://localhost:5000/orders/${params.id}`)
+      }
 
     ]
   },

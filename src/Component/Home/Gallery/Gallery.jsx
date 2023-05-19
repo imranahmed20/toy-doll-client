@@ -3,6 +3,9 @@ import './Gallery.css'
 import image1 from '../../../image/gellary1.avif'
 import image2 from '../../../image/gellary2.avif'
 import image3 from '../../../image/gallery4.avif'
+import image4 from '../../../image/gallery7.jpg'
+import image5 from '../../../image/gallery8.jpg'
+import image6 from '../../../image/gellary9.jpg'
 
 const Gallery = () => {
     return (
@@ -24,6 +27,21 @@ const Gallery = () => {
                 <div className='col'>
                     <div className='card'>
                         <img src={image3} className='img-fluid p-2 rounded' alt="" />
+                    </div>
+                </div>
+                <div className='col'>
+                    <div className='card'>
+                        <img src={image4} className='img-fluid p-2 rounded' alt="" />
+                    </div>
+                </div>
+                <div className='col'>
+                    <div className='card'>
+                        <img src={image5} style={{height:"360px"}} className='img-fluid p-2 rounded' alt="" />
+                    </div>
+                </div>
+                <div className='col'>
+                    <div className='card'>
+                        <img src={image6} style={{height:"360px"}} className='img-fluid p-2 rounded' alt="" />
                     </div>
                 </div>
             </div>
