@@ -21,7 +21,7 @@ const Categories = () => {
         fetch('http://localhost:5000/barbie')
             .then(res => res.json())
             .then(data => {
-               
+
                 setBarbies(data)
             })
     }, [])
@@ -29,7 +29,7 @@ const Categories = () => {
         fetch('http://localhost:5000/americans')
             .then(res => res.json())
             .then(data => {
-            
+
                 setAmericans(data)
             })
     }, [])

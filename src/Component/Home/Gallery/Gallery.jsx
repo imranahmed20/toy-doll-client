@@ -10,15 +10,21 @@ const Gallery = () => {
             <div className='mb-5'>
                 <h1 className='text-center fw-bold'>Our Doll Gallery</h1>
             </div>
-            <div className='row row-cols-1 row-cols-md-3'>
-                <div className='col card'>
-                    <img src={image1} className='rounded p-2 img-fluid' alt="" />
+            <div className='row row-cols-1 row-cols-md-3 g-3'>
+                <div className='col '>
+                    <div className='card'>
+                        <img src={image1} className='rounded p-2 img-fluid' alt="" />
+                    </div>
                 </div>
-                <div className='col card'>
-                    <img src={image2} className='rounded  img-fluid p-2' alt="" />
+                <div className='col'>
+                    <div className='card'>
+                        <img src={image2} className='rounded  img-fluid p-2' alt="" />
+                    </div>
                 </div>
-                <div className='col card'>
-                    <img src={image3} className='img-fluid p-2 rounded' alt="" />
+                <div className='col'>
+                    <div className='card'>
+                        <img src={image3} className='img-fluid p-2 rounded' alt="" />
+                    </div>
                 </div>
             </div>
         </div>

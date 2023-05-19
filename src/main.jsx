@@ -17,6 +17,7 @@ import Blog from './Component/Page/Blog/Blog.jsx';
 import Login from './Component/Page/Login/Login.jsx';
 import Register from './Component/Page/Register/Register.jsx';
 import AuthProvider from './Provider/AuthProvider.jsx';
+import Detail from './Component/Page/Detail/Detail.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -52,7 +53,22 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
-      }
+      },
+      {
+        path: '/categories/:id',
+        element: <Detail></Detail>,
+        loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`)
+      },
+      {
+        path: '/barbie/:id',
+        element: <Detail></Detail>,
+        loader: ({ params }) => fetch(`http://localhost:5000/barbie/${params.id}`)
+      },
+      {
+        path: '/americans/:id',
+        element: <Detail></Detail>,
+        loader: ({ params }) => fetch(`http://localhost:5000/americans/${params.id}`)
+      },
 
     ]
   },

@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Baby = ({ baby }) => {
-    const { name, image, price, rating } = baby;
+    const { _id, name, image, price, rating } = baby;
     return (
         <div className="col">
             <div className="card">
@@ -10,7 +11,9 @@ const Baby = ({ baby }) => {
                     <h3 className="card-title fw-bold">{name}</h3>
                     <p className="fw-semibold mb-2 mt-3">Price: ${price}</p>
                     <p className='fw-semibold'>Rating: {rating}</p>
-                    <button className='btn btn-success fw-semibold'>View Detail</button>
+                    <Link to={`/categories/${_id}`}>
+                        <button className='btn btn-success fw-semibold'>View Detail</button>
+                    </Link>
                 </div>
             </div>
         </div>
