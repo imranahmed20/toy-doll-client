@@ -2,13 +2,36 @@ import React, { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Baby from '../Baby/Baby';
+import Barbie from '../Barbie/Barbie';
+import American from '../Amiricans/American';
+
 
 const Categories = () => {
     const [categories, setCategories] = useState([])
+    const [barbies, setBarbies] = useState([])
+    const [americans, setAmericans] = useState([])
     useEffect(() => {
-        fetch('category.json')
+        fetch('http://localhost:5000/categories')
             .then(res => res.json())
-            .then(data => setCategories(data))
+            .then(data => {
+                setCategories(data)
+            })
+    }, [])
+    useEffect(() => {
+        fetch('http://localhost:5000/barbie')
+            .then(res => res.json())
+            .then(data => {
+               
+                setBarbies(data)
+            })
+    }, [])
+    useEffect(() => {
+        fetch('http://localhost:5000/americans')
+            .then(res => res.json())
+            .then(data => {
+            
+                setAmericans(data)
+            })
     }, [])
 
 
@@ -23,53 +46,25 @@ const Categories = () => {
                 </TabList>
 
                 <TabPanel>
-                    {
-                        categories.map(category => <Baby key={category._id} category={category}></Baby>)
-                    }
+                    <div className="row row-cols-1 row-cols-md-2 g-4">
+                        {
+                            categories.map(baby => <Baby key={baby._id} baby={baby}></Baby>)
+                        }
+                    </div>
 
                 </TabPanel>
                 <TabPanel>
                     <div className="row row-cols-1 row-cols-md-2 g-4">
-                        <div className="col">
-                            <div className="card">
-                                <img src="..." className="card-img-top" alt="..." />
-                                <div className="card-body">
-                                    <h5 className="card-title">Card title</h5>
-                                    <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col">
-                            <div className="card">
-                                <img src="..." className="card-img-top" alt="..." />
-                                <div className="card-body">
-                                    <h5 className="card-title">Card title</h5>
-                                    <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                </div>
-                            </div>
-                        </div>
+                        {
+                            barbies.map(barbie => <Barbie key={barbie._id} barbie={barbie}></Barbie>)
+                        }
                     </div>
                 </TabPanel>
                 <TabPanel>
                     <div className="row row-cols-1 row-cols-md-2 g-4">
-                        <div className="col">
-                            <div className="card">
-                                <img src="..." className="card-img-top" alt="..." />
-                                <div className="card-body">
-                                    <h5 className="card-title">Card title</h5>
-                                    <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col">
-                            <div className="card">
-                                <img src="..." className="card-img-top" alt="..." />
-                                <div className="card-body">
-                                    <h5 className="card-title">Card title</h5>
-                                    <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                </div>
-                            </div>
-                        </div>
+                        {
+                            americans.map(american => <American key={american._id} american={american}></American>)
+                        }
                     </div>
                 </TabPanel>
             </Tabs>

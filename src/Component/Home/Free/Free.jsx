@@ -26,7 +26,7 @@ const Free = () => {
                         <div className='row'>
                             <div className="card-body col-8">
                                 <h3 className="card-title fw-bold fs-1">Tady Bear  Doll</h3>
-                                <h4 className="card-text fw-semibold mb-4 mt-3">Get Up To 70% off</h4>
+                                <h4 className="card-text fw-semibold mb-4 mt-3">Get Up To 80% off</h4>
                                 <button className='btn btn-danger fw-semibold'>Shop Now</button>
                             </div>
                             <div className='col-4'>

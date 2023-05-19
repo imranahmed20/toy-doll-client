@@ -1,21 +1,20 @@
 import React from 'react';
 
-const Baby = ({ baby }) => {
-    const { name, image, price, rating } = baby;
+const American = ({ american }) => {
+    const { name, image, price, rating } = american;
     return (
-        <div className="col">
+        <div>
             <div className="card">
                 <img src={image} className='img-fluid p-2 rounded' style={{ height: '300px' }} alt="" />
                 <div className="card-body">
                     <h3 className="card-title fw-bold">{name}</h3>
                     <p className="fw-semibold mb-2 mt-3">Price: ${price}</p>
                     <p className='fw-semibold'>Rating: {rating}</p>
-                    <button className='btn btn-success fw-semibold'>View Detail</button>
+                    <button  className='btn btn-success fw-semibold'>View Detail</button>
                 </div>
             </div>
         </div>
-
     );
 };
 
-export default Baby;
+export default American;

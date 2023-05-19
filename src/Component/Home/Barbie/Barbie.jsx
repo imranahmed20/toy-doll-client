@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Baby = ({ baby }) => {
-    const { name, image, price, rating } = baby;
+const Barbie = ({ barbie }) => {
+    const { name, image, price, rating } = barbie;
     return (
-        <div className="col">
+        <div className='col'>
             <div className="card">
                 <img src={image} className='img-fluid p-2 rounded' style={{ height: '300px' }} alt="" />
                 <div className="card-body">
@@ -14,8 +14,7 @@ const Baby = ({ baby }) => {
                 </div>
             </div>
         </div>
-
     );
 };
 
-export default Baby;
+export default Barbie;
