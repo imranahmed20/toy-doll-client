@@ -31,29 +31,31 @@ const Header = () => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Nav.Link className='fw-semibold me-3' href="/">Home</Nav.Link>
-                            <Nav.Link className='fw-semibold me-3' href="/allToy">All Toys</Nav.Link>
-                            <Nav.Link className='fw-semibold me-3' href="/myToy">My Toy</Nav.Link>
-                            <Nav.Link className='fw-semibold me-3' href="/addToy">Add A Toy</Nav.Link>
-                            <Nav.Link className='fw-semibold me-3' href="/blog">Blog</Nav.Link>
-
-
+                            <Link className='fw-semibold me-3 text-decoration-none mt-2 text-dark' to='/'>Home</Link>
+                            <Link className='fw-semibold me-3 text-decoration-none mt-2 text-dark' to='/allToy'>All Toys</Link>
+                            <Link className='fw-semibold me-3 text-decoration-none mt-2 text-dark' to='/addToy'>Add A Toy</Link>
+                            <Link className='fw-semibold me-0 text-decoration-none mt-2 text-dark' to='/blog'>Blog</Link>
                         </Nav>
 
                         <Form className="d-flex">
+                            {user?.email ?
+                                <>
+                                    <Link className='fw-semibold text-decoration-none mt-2 text-dark me-3' to='/myToy'>My Toy</Link>
 
-                            {
-                                user ?
-                                    <img style={{ width: '50px', height: '40px' }} title={user?.displayName} className='rounded-circle me-3' src={user?.photoURL} alt="" />
-                                    :
-                                    <FaUser className='me-3' style={{ fontSize: '2rem' }}></FaUser>
-                            }
-                            {user ?
-                                <Button className='fw-semibold' onClick={handleLogOut} variant="primary">logOut</Button> :
+                                    <Button className='fw-semibold' onClick={handleLogOut} variant="primary">logOut</Button>
+                                </> :
                                 <Button variant="primary">
                                     <Link className='text-white text-decoration-none fw-semibold' to='/login'>Login</Link>
                                 </Button>
                             }
+
+                            {
+                                user ?
+                                    <img style={{ width: '50px', height: '40px' }} title={user?.displayName} className='rounded-circle ms-3' src={user?.photoURL} alt="" />
+                                    :
+                                    <FaUser className='me-3' style={{ fontSize: '2rem' }}></FaUser>
+                            }
+
                         </Form>
                     </Navbar.Collapse>
                 </Container>

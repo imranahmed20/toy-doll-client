@@ -7,6 +7,7 @@ const AllToys = () => {
     const orders = useLoaderData()
     return (
         <div className='container mt-5'>
+            <h1 className='text-center fw-bold mb-5 text-danger'>All Toys</h1>
             <Table bordered size="">
                 <thead>
                     <tr>

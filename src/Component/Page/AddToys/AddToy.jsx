@@ -5,14 +5,13 @@ import { Navigate } from 'react-router-dom';
 
 
 const AddToy = () => {
-    const { user } = useContext(AuthContext)
+
     const handleAddDoll = event => {
         event.preventDefault()
-
         const form = event.target;
         const name = form.name.value;
         const sellerName = form.sellerName.value;
-        const email = user.email;
+        const email = form.email.value;
         const photo = form.photo.value;
         const quantity = form.quantity.value;
         const price = form.price.value;
@@ -44,51 +43,52 @@ const AddToy = () => {
             .then(data => {
                 console.log(data)
             })
-        form.rest()
-
-
+        if (insertedId) {
+            alert('added success')
+        }
 
     }
     return (
         <div className='container mt-5'>
+            <h1 className='text-center text-danger fw-bold mb-5'>Add A Toy</h1>
             <form onSubmit={handleAddDoll}>
                 <div className='row row-cols-1 row-cols-md-2 g-3'>
                     <div className="col mb-3">
-                        <label for="exampleInputEmail1" className="form-label fw-semibold">Name</label>
+                        <label className="form-label fw-semibold">Name</label>
                         <input type="text" name='name' className="form-control" id="exampleInputEmail1" placeholder='Name' aria-describedby="emailHelp" />
                     </div>
                     <div className="col mb-3">
-                        <label for="exampleInputPassword1" className="form-label fw-semibold">Seller Name</label>
+                        <label className="form-label fw-semibold">Seller Name</label>
                         <input type="text" name='sellerName' placeholder='Seller Name' className="form-control" id="exampleInputPassword1" />
                     </div>
                     <div className="col mb-3">
-                        <label for="exampleInputEmail1" className="form-label fw-semibold">Email address</label>
+                        <label className="form-label fw-semibold">Email address</label>
                         <input type="email" name='email' placeholder='Email' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                     </div>
                     <div className="col mb-3">
-                        <label for="exampleInputPassword1" className="form-label fw-semibold">Category Name</label>
+                        <label className="form-label fw-semibold">Category Name</label>
                         <input type="text" name='category' placeholder='Category Name' className="form-control" id="exampleInputPassword1" />
                     </div>
                     <div className="col mb-3">
-                        <label for="exampleInputEmail1" className="form-label fw-semibold">Price</label>
+                        <label className="form-label fw-semibold">Price</label>
                         <input type="text" name='price' placeholder='Price' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                     </div>
                     <div className="col mb-3">
-                        <label for="exampleInputPassword1" className="form-label fw-semibold">Rating</label>
+                        <label className="form-label fw-semibold">Rating</label>
                         <input type="text" name='rating' placeholder='Rating' className="form-control" id="exampleInputPassword1" />
                     </div>
                     <div className="col mb-3">
-                        <label for="exampleInputEmail1" className="form-label fw-semibold">Quantity</label>
+                        <label className="form-label fw-semibold">Quantity</label>
                         <input type="text" name='quantity' placeholder='Quantity' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                     </div>
                     <div className="col mb-3">
-                        <label for="exampleInputPassword1" className="form-label fw-semibold">PhotoURL</label>
+                        <label className="form-label fw-semibold">PhotoURL</label>
                         <input type="text" name='photo' placeholder='PhotoURL' className="form-control" id="exampleInputPassword1" />
                     </div>
 
                 </div>
                 <div className="mb-3">
-                    <label for="exampleFormControlTextarea1" className="form-label fw-semibold">Details</label>
+                    <label className="form-label fw-semibold">Details</label>
                     <textarea className="form-control" name='detail' placeholder='Detail' id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
