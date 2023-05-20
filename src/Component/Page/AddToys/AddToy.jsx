@@ -35,7 +35,7 @@ const AddToy = () => {
 
         }
         console.log(order)
-        fetch('http://localhost:5000/orders', {
+        fetch('https://toy-doll-server.vercel.app/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -62,6 +62,7 @@ const AddToy = () => {
     return (
         <div className='container mt-5'>
             <h1 className='text-center text-danger fw-bold mb-5'>Add A Toy</h1>
+            
             <form onSubmit={handleAddDoll}>
                 <div className='row row-cols-1 row-cols-md-2 g-3'>
                     <div className="col mb-3">

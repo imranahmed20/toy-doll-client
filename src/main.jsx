@@ -35,7 +35,7 @@ const router = createBrowserRouter([
       {
         path: '/allToy',
         element: <AllToys></AllToys>,
-        loader: () => fetch('http://localhost:5000/orders')
+        loader: () => fetch('https://toy-doll-server.vercel.app/orders')
       },
       {
         path: '/myToy',
@@ -61,27 +61,27 @@ const router = createBrowserRouter([
       {
         path: '/categories/:id',
         element: <PrivetRouter><Detail></Detail></PrivetRouter>,
-        loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`)
+        loader: ({ params }) => fetch(`https://toy-doll-server.vercel.app/categories/${params.id}`)
       },
       {
         path: '/barbie/:id',
         element: <PrivetRouter><Detail></Detail></PrivetRouter>,
-        loader: ({ params }) => fetch(`http://localhost:5000/barbie/${params.id}`)
+        loader: ({ params }) => fetch(`https://toy-doll-server.vercel.app/barbie/${params.id}`)
       },
       {
         path: '/americans/:id',
         element: <PrivetRouter><Detail></Detail></PrivetRouter>,
-        loader: ({ params }) => fetch(`http://localhost:5000/americans/${params.id}`)
+        loader: ({ params }) => fetch(`https://toy-doll-server.vercel.app/americans/${params.id}`)
       },
       {
         path: '/orders/:id',
         element: <PrivetRouter><OrderDetail></OrderDetail></PrivetRouter>,
-        loader: ({ params }) => fetch(`http://localhost:5000/orders/${params.id}`)
+        loader: ({ params }) => fetch(`https://toy-doll-server.vercel.app/orders/${params.id}`)
       },
       {
         path: '/update/:id',
         element: <Update></Update>,
-        loader: ({ params }) => fetch(`http://localhost:5000/orders/${params.id}`)
+        loader: ({ params }) => fetch(`https://toy-doll-server.vercel.app/orders/${params.id}`)
       }
 
     ]

@@ -11,14 +11,14 @@ const Categories = () => {
     const [barbies, setBarbies] = useState([])
     const [americans, setAmericans] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/categories')
+        fetch('https://toy-doll-server.vercel.app/categories')
             .then(res => res.json())
             .then(data => {
                 setCategories(data)
             })
     }, [])
     useEffect(() => {
-        fetch('http://localhost:5000/barbie')
+        fetch('https://toy-doll-server.vercel.app/barbie')
             .then(res => res.json())
             .then(data => {
 
@@ -26,7 +26,7 @@ const Categories = () => {
             })
     }, [])
     useEffect(() => {
-        fetch('http://localhost:5000/americans')
+        fetch('https://toy-doll-server.vercel.app/americans')
             .then(res => res.json())
             .then(data => {
 

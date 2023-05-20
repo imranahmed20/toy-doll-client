@@ -32,7 +32,7 @@ const Update = () => {
             photo,
 
         }
-        fetch(`http://localhost:5000/orders/${updateUser._id}`, {
+        fetch(`https://toy-doll-server.vercel.app/orders/${updateUser._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
