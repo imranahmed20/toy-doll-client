@@ -1,15 +1,13 @@
-import React, { useContext } from 'react';
-import { AuthContext } from '../../../Provider/AuthProvider';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
 
-
-
-
-const AddToy = () => {
+const Update = () => {
+    const updateUser = useLoaderData()
     const navigate = useNavigate()
+    const { email, sellerName, photo, price, name, category, rating, detail, quantity, status } = updateUser;
 
-    const handleAddDoll = event => {
+    const handleChange = event => {
         event.preventDefault()
         const form = event.target;
         const name = form.name.value;
@@ -22,7 +20,7 @@ const AddToy = () => {
         const detail = form.detail.value;
         const category = form.category.value;
         console.log(name, sellerName, email, photo, quantity, price, rating, detail, category)
-        const order = {
+        const updateOrders = {
             name,
             sellerName,
             email,
@@ -34,78 +32,74 @@ const AddToy = () => {
             photo,
 
         }
-        console.log(order)
-        fetch('http://localhost:5000/orders', {
-            method: 'POST',
+        fetch(`http://localhost:5000/orders/${updateUser._id}`, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(order)
+            body: JSON.stringify(updateOrders)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if (data.insertedId) {
+                if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: 'success',
-                        text: 'Add Toy successfully',
+                        text: 'Update Successfully',
                         icon: 'success',
-                        confirmButtonText: 'ok'
+                        confirmButtonText: 'Cool'
                     })
                     navigate('/myToy')
-                    form.reset()
                 }
             })
-
-
     }
     return (
-        <div className='container mt-5'>
-            <h1 className='text-center text-danger fw-bold mb-5'>Add A Toy</h1>
-            <form onSubmit={handleAddDoll}>
+        <div className='container'>
+            <h1 className='text-center mb-5 mt-3 text-danger fw-bold'>Update Now</h1>
+            <form onSubmit={handleChange}>
                 <div className='row row-cols-1 row-cols-md-2 g-3'>
                     <div className="col mb-3">
                         <label className="form-label fw-semibold">Name</label>
-                        <input type="text" name='name' className="form-control" id="exampleInputEmail1" placeholder='Name' aria-describedby="emailHelp" />
+                        <input type="text" name='name' className="form-control" id="exampleInputEmail1" defaultValue={name} aria-describedby="emailHelp" />
                     </div>
                     <div className="col mb-3">
                         <label className="form-label fw-semibold">Seller Name</label>
-                        <input type="text" name='sellerName' placeholder='Seller Name' className="form-control" id="exampleInputPassword1" />
+                        <input type="text" name='sellerName' defaultValue={sellerName} className="form-control" id="exampleInputPassword1" />
                     </div>
                     <div className="col mb-3">
                         <label className="form-label fw-semibold">Email address</label>
-                        <input type="email" name='email' placeholder='Email' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                        <input type="email" name='email' defaultValue={email} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                     </div>
                     <div className="col mb-3">
                         <label className="form-label fw-semibold">Category Name</label>
-                        <input type="text" name='category' placeholder='Category Name' className="form-control" id="exampleInputPassword1" />
+                        <input type="text" name='category' defaultValue={category} className="form-control" id="exampleInputPassword1" />
                     </div>
                     <div className="col mb-3">
                         <label className="form-label fw-semibold">Price</label>
-                        <input type="text" name='price' placeholder='Price' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                        <input type="text" name='price' defaultValue={price} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                     </div>
                     <div className="col mb-3">
                         <label className="form-label fw-semibold">Rating</label>
-                        <input type="text" name='rating' placeholder='Rating' className="form-control" id="exampleInputPassword1" />
+                        <input type="text" name='rating' defaultValue={rating} className="form-control" id="exampleInputPassword1" />
                     </div>
                     <div className="col mb-3">
                         <label className="form-label fw-semibold">Quantity</label>
-                        <input type="text" name='quantity' placeholder='Quantity' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                        <input type="text" name='quantity' defaultValue={quantity} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                     </div>
                     <div className="col mb-3">
                         <label className="form-label fw-semibold">PhotoURL</label>
-                        <input type="text" name='photo' placeholder='PhotoURL' className="form-control" id="exampleInputPassword1" />
+                        <input type="text" name='photo' defaultValue={photo} className="form-control" id="exampleInputPassword1" />
                     </div>
 
                 </div>
                 <div className="mb-3">
                     <label className="form-label fw-semibold">Details</label>
-                    <textarea className="form-control" name='detail' placeholder='Detail' id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea className="form-control" name='detail' defaultValue={detail} id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
-                <button type="submit" className="btn btn-primary fw-semibold">Add Toy</button>
+                <button type='submit' className="btn btn-success fw-semibold">Update Now</button>
             </form>
         </div>
     );
 };
 
-export default AddToy;
+export default Update;

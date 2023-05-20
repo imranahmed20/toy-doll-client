@@ -1,20 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Booking = ({ booking }) => {
+const Booking = ({ booking, handleDelete }) => {
     const { _id, category, detail, photo, email, name, price, quantity, sellerName } = booking;
 
-    const handleDelete = id => {
-        console.log('hello', id)
-        fetch(`http://localhost:5000/orders/${_id}`, {
-            method: "DELETE"
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-            })
-
-    }
     return (
         <tr>
             <td>
@@ -30,7 +19,12 @@ const Booking = ({ booking }) => {
             <td>{detail.slice(0, 65)}...</td>
             <td>{quantity}</td>
             <td>
-                <button onClick={() => handleDelete(_id)} className='btn btn-success fw-semibold'>Delete</button>
+                <button onClick={() => handleDelete(_id)} className='btn btn-danger fw-semibold'>Delete</button>
+            </td>
+            <td>
+                <Link to={`/update/${_id}`}>
+                    <button className='btn btn-success fw-semibold'>Update</button>
+                </Link>
             </td>
         </tr>
 

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import { Table } from 'react-bootstrap';
 import Booking from './Booking/Booking';
+import Swal from 'sweetalert2'
 
 
 
@@ -17,6 +18,28 @@ const MyToys = () => {
                 setMyOrder(data)
             })
     }, [])
+
+    const handleDelete = id => {
+        console.log('hello', id)
+        fetch(`http://localhost:5000/orders/${id}`, {
+            method: "DELETE"
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.deletedCount > 0) {
+                    Swal.fire(
+                        "Delete!",
+                        "You Add Toy has been delete.",
+                        "success"
+                    )
+                    const remaining = myOrders.filter(booking => booking._id !== id)
+                    setMyOrder(remaining)
+
+                }
+            })
+
+    }
 
     return (
         <div className='container'>
@@ -39,7 +62,10 @@ const MyToys = () => {
                     </thead>
                     <tbody className='text-center'>
                         {
-                            myOrders.map(booking => <Booking key={booking._id} booking={booking}></Booking>)
+                            myOrders.map(booking => <Booking
+                                key={booking._id}
+                                handleDelete={handleDelete}
+                                booking={booking}></Booking>)
                         }
                     </tbody>
                 </Table>

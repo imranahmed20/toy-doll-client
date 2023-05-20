@@ -20,6 +20,7 @@ import AuthProvider from './Provider/AuthProvider.jsx';
 import Detail from './Component/Page/Detail/Detail.jsx';
 import PrivetRouter from './Router/PrivetRouter.jsx';
 import OrderDetail from './Component/Page/OrderDetail/OrderDetail.jsx';
+import Update from './Component/Page/Update/Update.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -75,6 +76,11 @@ const router = createBrowserRouter([
       {
         path: '/orders/:id',
         element: <PrivetRouter><OrderDetail></OrderDetail></PrivetRouter>,
+        loader: ({ params }) => fetch(`http://localhost:5000/orders/${params.id}`)
+      },
+      {
+        path: '/update/:id',
+        element: <Update></Update>,
         loader: ({ params }) => fetch(`http://localhost:5000/orders/${params.id}`)
       }
 

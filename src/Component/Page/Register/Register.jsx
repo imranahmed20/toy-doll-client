@@ -30,7 +30,7 @@ const Register = () => {
                 updateProfile(result.user, { displayName: name, photoURL: photo })
                 const user = result.user;
                 console.log(user)
-                form.reset()    
+                form.reset()
                 navigate('/login')
             })
             .catch(error => {
@@ -52,12 +52,12 @@ const Register = () => {
                             <Form.Control type="name" name='name' placeholder="Enter Name" required />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>PhotoURL</Form.Label>
-                            <Form.Control type="text" name='photo' placeholder="Enter PhoURL" required />
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
                             <Form.Control type="email" name='email' placeholder="Enter Email" required />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>PhotoURL</Form.Label>
+                            <Form.Control type="text" name='photo' placeholder="Enter PhoURL" required />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
