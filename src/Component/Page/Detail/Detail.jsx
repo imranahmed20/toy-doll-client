@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { FaStar } from 'react-icons/fa';
 
 const Detail = () => {
     const details = useLoaderData()
@@ -13,7 +14,7 @@ const Detail = () => {
                         <h3 className="fs-1 fw-bold">{name}</h3>
                         <p className="fw-semibold mb-2 mt-3 fs-3">Category: {category}</p>
                         <p className="fw-semibold mb-2 mt-3 fs-3">Price: ${price}</p>
-                        <p className='fw-semibold fs-3'>Rating: {rating}</p>
+                        <p className='fw-semibold fs-3'>Rating: {rating} <FaStar></FaStar> <FaStar></FaStar></p>
                         <p className='fw-semibold'>Detail: {detail}</p>
                     </div>
 

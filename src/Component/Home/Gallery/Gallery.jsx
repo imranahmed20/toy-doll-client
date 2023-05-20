@@ -1,11 +1,11 @@
 import React from 'react';
 import './Gallery.css'
 import image1 from '../../../image/gellary1.avif'
-import image2 from '../../../image/gellary2.avif'
+import image2 from '../../../image/gallery14.avif'
 import image3 from '../../../image/gallery4.avif'
-import image4 from '../../../image/gallery7.jpg'
-import image5 from '../../../image/gallery8.jpg'
-import image6 from '../../../image/gellary9.jpg'
+import image4 from '../../../image/gallery11.avif'
+import image5 from '../../../image/gallery12.avif'
+import image6 from '../../../image/gallery13.avif'
 
 const Gallery = () => {
     return (
@@ -16,32 +16,32 @@ const Gallery = () => {
             <div className='row row-cols-1 row-cols-md-3 g-3'>
                 <div className='col '>
                     <div className='card'>
-                        <img src={image1} className='rounded p-2 img-fluid' alt="" />
+                        <img src={image1} style={{ height: "320px" }} className='rounded p-2 img-fluid' alt="" />
                     </div>
                 </div>
                 <div className='col'>
                     <div className='card'>
-                        <img src={image2} className='rounded  img-fluid p-2' alt="" />
+                        <img src={image2}  style={{ height: "320px" }} className='rounded  img-fluid p-2' alt="" />
                     </div>
                 </div>
                 <div className='col'>
                     <div className='card'>
-                        <img src={image3} className='img-fluid p-2 rounded' alt="" />
+                        <img src={image3} style={{ height: "320px" }} className='img-fluid p-2 rounded-lg' alt="" />
                     </div>
                 </div>
                 <div className='col'>
                     <div className='card'>
-                        <img src={image4} className='img-fluid p-2 rounded' alt="" />
+                        <img src={image4} style={{ height: "320px" }} className='img-fluid p-2 rounded' alt="" />
                     </div>
                 </div>
                 <div className='col'>
                     <div className='card'>
-                        <img src={image5} style={{height:"360px"}} className='img-fluid p-2 rounded' alt="" />
+                        <img src={image5} style={{ height: "320px" }} className='img-fluid p-2 rounded' alt="" />
                     </div>
                 </div>
                 <div className='col'>
                     <div className='card'>
-                        <img src={image6} style={{height:"360px"}} className='img-fluid p-2 rounded' alt="" />
+                        <img src={image6} style={{ height: "320px" }} className='img-fluid p-2 rounded' alt="" />
                     </div>
                 </div>
             </div>
