@@ -6,7 +6,7 @@ const American = ({ american }) => {
     const { _id, name, image, price, rating } = american;
     return (
         <div>
-            <div className="card">
+            <div className="card" data-aos="zoom-in">
                 <img src={image} className='img-fluid p-2 rounded' style={{ height: '300px' }} alt="" />
                 <div className="card-body">
                     <h3 className="card-title fw-bold fs-3">{name}</h3>

@@ -8,7 +8,7 @@ const OrderRow = ({ order }) => {
             <td>{sellerName}</td>
             <td>{name}</td>
             <td>{category}</td>
-            <td>$ {price}</td>
+            <td>{"$" + price}</td>
             <td>{quantity}</td>
             <td>
                 <Link to={`/orders/${_id}`}>

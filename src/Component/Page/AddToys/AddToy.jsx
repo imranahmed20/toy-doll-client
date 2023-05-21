@@ -2,13 +2,14 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
+import useTitle from '../../../Hooks/useTitle';
 
 
 
 
 const AddToy = () => {
     const navigate = useNavigate()
-
+    useTitle("Add Toy")
     const handleAddDoll = event => {
         event.preventDefault()
         const form = event.target;
@@ -59,9 +60,8 @@ const AddToy = () => {
 
     }
     return (
-        <div className='container mt-5'>
+        <div className='container mt-5' data-aos="zoom-in">
             <h1 className='text-center text-danger fw-bold mb-5'>Add A Toy</h1>
-            
             <form onSubmit={handleAddDoll}>
                 <div className='row row-cols-1 row-cols-md-2 g-3'>
                     <div className="col mb-3">

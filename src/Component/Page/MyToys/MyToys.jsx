@@ -3,12 +3,14 @@ import { AuthContext } from '../../../Provider/AuthProvider';
 import { Table } from 'react-bootstrap';
 import Booking from './Booking/Booking';
 import Swal from 'sweetalert2'
+import useTitle from '../../../Hooks/useTitle';
 
 
 
 const MyToys = () => {
     const { user } = useContext(AuthContext)
     const [myOrders, setMyOrder] = useState([])
+    useTitle("My Toy")
 
     const url = `https://toy-doll-server.vercel.app/orders?email=${user?.email}`;
     useEffect(() => {
@@ -54,7 +56,9 @@ const MyToys = () => {
     }
 
     return (
-        <div className='container'>
+        <div className='container' data-aos="fade-up"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000">
             <h1 className='text-center mt-3 fw-bold mb-5 text-danger'>My Order Toy</h1>
             <div className='table-responsive'>
                 <Table responsive bordered size="">

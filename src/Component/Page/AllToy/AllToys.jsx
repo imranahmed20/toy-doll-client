@@ -2,9 +2,11 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import OrderRow from './OrderRow/OrderRow';
 import { Table } from 'react-bootstrap';
+import useTitle from '../../../Hooks/useTitle';
 
 const AllToys = () => {
     const orders = useLoaderData()
+    useTitle("All Toys")
     const handleSearch = event => {
         event.preventDefault()
         const form = event.target;
@@ -13,7 +15,9 @@ const AllToys = () => {
 
     }
     return (
-        <div className='container mt-5'>
+        <div className='container mt-5' data-aos="fade-up"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000">
             <h1 className='text-center fw-bold mb-5 text-danger'>All Toys</h1>
             <form onSubmit={handleSearch}>
                 <div className="input-group w-50 mx-auto  mb-5">

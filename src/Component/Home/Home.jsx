@@ -4,10 +4,12 @@ import Gallery from './Gallery/Gallery';
 import Categories from './Categories/Categories';
 import Free from './Free/Free';
 import Tranding from './Tranding/Tranding';
+import useTitle from '../../Hooks/useTitle';
 
 
 
 const Home = () => {
+    useTitle('Home')
     return (
         <div className='container'>
             <Banner></Banner>

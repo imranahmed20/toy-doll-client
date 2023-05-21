@@ -1,9 +1,11 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
+import useTitle from '../../../Hooks/useTitle';
 
 const OrderDetail = () => {
     const orderDetails = useLoaderData()
+    useTitle('Details')
     console.log(orderDetails)
     const { name, rating, detail, price, category, photo, quantity, email, sellerName } = orderDetails;
     return (

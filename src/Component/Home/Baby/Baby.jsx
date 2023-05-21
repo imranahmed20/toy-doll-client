@@ -5,7 +5,7 @@ import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 const Baby = ({ baby }) => {
     const { _id, name, image, price, rating } = baby;
     return (
-        <div className="col">
+        <div className="col"  data-aos="zoom-in">
             <div className="card">
                 <img src={image} className='img-fluid p-2 rounded' style={{ height: '300px' }} alt="" />
                 <div className="card-body">

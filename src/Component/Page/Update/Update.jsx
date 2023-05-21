@@ -1,10 +1,12 @@
 import React from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
+import useTitle from '../../../Hooks/useTitle';
 
 const Update = () => {
     const updateUser = useLoaderData()
     const navigate = useNavigate()
+    useTitle('Update')
     const { email, sellerName, photo, price, name, category, rating, detail, quantity, status } = updateUser;
 
     const handleChange = event => {
@@ -54,7 +56,9 @@ const Update = () => {
             })
     }
     return (
-        <div className='container'>
+        <div className='container' data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000">
             <h1 className='text-center mb-5 mt-3 text-danger fw-bold'>Update Now</h1>
             <form onSubmit={handleChange}>
                 <div className='row row-cols-1 row-cols-md-2 g-3'>

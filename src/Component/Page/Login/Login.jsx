@@ -8,6 +8,7 @@ import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../../../Firebase/Firebase';
+import useTitle from '../../../Hooks/useTitle';
 
 const auth = getAuth(app)
 const Login = () => {
@@ -16,7 +17,7 @@ const Login = () => {
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || '/'
-
+    useTitle('Login')
     const provider = new GoogleAuthProvider()
 
 

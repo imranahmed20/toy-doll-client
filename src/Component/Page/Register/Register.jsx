@@ -6,12 +6,14 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import login from '../../../image/login.avif'
 import { AuthContext } from '../../../Provider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
+import useTitle from '../../../Hooks/useTitle';
 
 
 const Register = () => {
     const { createUser } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
+    useTitle("Register")
     const [error, setError] = useState('')
     const from = location.state?.from?.pathname || '/'
     const handleRegister = event => {
