@@ -1,19 +1,23 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import OrderRow from './OrderRow/OrderRow';
 import { Table } from 'react-bootstrap';
 import useTitle from '../../../Hooks/useTitle';
 
 const AllToys = () => {
     const orders = useLoaderData()
+
+    const [searchOrders, setSearchOrders] = useState(orders)
+
     useTitle("All Toys")
     const handleSearch = event => {
         event.preventDefault()
         const form = event.target;
         const name = form.name.value;
-        console.log(name)
-
+        const search = orders.filter(order => order.category == name)
+        setSearchOrders(search)
     }
+
     return (
         <div className='container mt-5' data-aos="fade-up"
             data-aos-easing="ease-out-cubic"
@@ -38,7 +42,7 @@ const AllToys = () => {
                 </thead>
                 <tbody>
                     {
-                        orders.map(order => <OrderRow key={order._id} order={order}></OrderRow>)
+                        searchOrders.map(order => <OrderRow key={order._id} order={order}></OrderRow>)
                     }
                 </tbody>
             </Table>

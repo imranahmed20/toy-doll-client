@@ -42,21 +42,21 @@ const Header = () => {
 
                         </Nav>
 
-                        <Form className="d-flex">
+                        <Form className="d-flex align-items-center">
 
 
                             {
                                 user ?
-                                    <img style={{ width: '50px', height: '40px' }} title={user?.displayName} className='rounded-circle me-3 mt-2' src={user?.photoURL} alt="" />
+                                    <img style={{ width: '40px', height: '40px' }} title={user?.displayName} className='rounded-circle me-3 mt-2' src={user?.photoURL} alt="" />
                                     :
-                                    <FaUser className='me-3 mt-2' style={{ fontSize: '2rem' }}></FaUser>
+                                    <FaUser className='me-3' style={{ fontSize: '2rem' }}></FaUser>
                             }
                             {user?.email ?
 
-                                <Button className='fw-semibold' onClick={handleLogOut} variant="primary">logOut</Button>
+                                <Button className='fw-semibold' onClick={handleLogOut} variant="primary">LOGOUT</Button>
                                 :
                                 <Button variant="primary">
-                                    <Link className='text-white text-decoration-none fw-semibold' to='/login'>Login</Link>
+                                    <Link className='text-white text-decoration-none fw-semibold' to='/login'>LOGIN</Link>
                                 </Button>
                             }
 

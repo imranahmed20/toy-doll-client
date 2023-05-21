@@ -31,7 +31,9 @@ Framework: react-bootstrap
 
 Icon: react-icon
 
-Image : Freepic
+Image : freepik
+
+Animation : AOS
 
 
 
