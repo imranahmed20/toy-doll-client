@@ -21,7 +21,7 @@ const AllToys = () => {
             <h1 className='text-center fw-bold mb-5 text-danger'>All Toys</h1>
             <form onSubmit={handleSearch}>
                 <div className="input-group w-50 mx-auto  mb-5">
-                    <input type="text" name='name' className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
+                    <input type="text" name='name' className="form-control" placeholder="Search Doll Name" aria-label="Username" aria-describedby="basic-addon1" />
                     <button type='submit' className='btn btn-danger fw-semibold'>Search</button>
                 </div>
             </form>

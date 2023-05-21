@@ -31,15 +31,14 @@ const Header = () => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Link className='fw-semibold me-3 text-decoration-none mt-2 text-dark' to='/'>Home</Link>
-                            <Link className='fw-semibold me-3 text-decoration-none mt-2 text-dark' to='/allToy'>All Toys</Link>
-                            <Link className='fw-semibold me-3 text-decoration-none mt-2 text-dark' to='/addToy'>Add A Toy</Link>
-                            <Link className='fw-semibold text-decoration-none mt-2 text-dark'>
-                                {   
-                                    user?.email ? < Link className='fw-semibold text-decoration-none mt-2 text-dark me-3' to='/myToy'>My Toy</Link> :
-                                        <>< Link className='fw-semibold text-decoration-none mt-2  text-dark me-3' to='/myToy'>My Toy</Link></>
-                                }</Link>
-                            <Link className='fw-semibold me-0 text-decoration-none mt-2 text-dark' to='/blog'>Blog</Link>
+                            <Link className='fw-semibold me-4 text-decoration-none text-dark' to='/'>Home</Link>
+                            <Link className='fw-semibold me-4 text-decoration-none  text-dark' to='/allToy'>All Toys</Link>
+                            <Link className='fw-semibold me-4 text-decoration-none text-dark' to='/addToy'>Add A Toy</Link>
+                            {
+                                user?.email ? < Link className='fw-semibold text-decoration-none  text-dark me-4' to='/myToy'>My Toy</Link> :
+                                    <>< Link className='fw-semibold text-decoration-none text-dark me-4' to='/myToy'>My Toy</Link></>
+                            }
+                            <Link className='fw-semibold me-0 text-decoration-none  text-dark' to='/blog'>Blog</Link>
 
                         </Nav>
 
@@ -48,9 +47,9 @@ const Header = () => {
 
                             {
                                 user ?
-                                    <img style={{ width: '50px', height: '40px' }} title={user?.displayName} className='rounded-circle me-3' src={user?.photoURL} alt="" />
+                                    <img style={{ width: '50px', height: '40px' }} title={user?.displayName} className='rounded-circle me-3 mt-2' src={user?.photoURL} alt="" />
                                     :
-                                    <FaUser className='me-3' style={{ fontSize: '2rem' }}></FaUser>
+                                    <FaUser className='me-3 mt-2' style={{ fontSize: '2rem' }}></FaUser>
                             }
                             {user?.email ?
 
