@@ -1,7 +1,7 @@
 
-# Toy Doll 
+# Toy Doll Marketplace
 
-This website is doll related.
+This website is Doll Marketplace
 
 
 ## Features
@@ -18,7 +18,7 @@ Toy Doll Client link: https://github.com/programming-hero-web-course-4/b7a11-toy
 
 Toy Doll Server link: https://github.com/programming-hero-web-course-4/b7a11-toy-marketplace-server-side-imranahmed20
 
-live site link:
+live site link: https://toy-doll-client.web.app
 
 
 ## Documentation
@@ -27,7 +27,17 @@ live site link:
 
 Toast : Sweet Toast
 
-framework: react-bootstrap
+Framework: react-bootstrap
+
+Icon: react-icon
+
+Image : Freepic
+
+
+
+
+
+
 
 ## Deployment
 

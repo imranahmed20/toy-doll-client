@@ -34,7 +34,6 @@ const AddToy = () => {
             photo,
 
         }
-        console.log(order)
         fetch('https://toy-doll-server.vercel.app/orders', {
             method: 'POST',
             headers: {

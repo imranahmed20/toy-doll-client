@@ -23,7 +23,7 @@ const Header = () => {
                 <Container fluid>
                     <Navbar.Brand className='fw-bold fs-4' href="#">
                         <img src={logo} className='W-25 me-2 rounded-circle' alt="" style={{ width: 45 }} />
-                        Toy Doll</Navbar.Brand>
+                        Doll Marketplace</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
@@ -42,6 +42,14 @@ const Header = () => {
                         </Nav>
 
                         <Form className="d-flex">
+
+
+                            {
+                                user ?
+                                    <img style={{ width: '50px', height: '40px' }} title={user?.displayName} className='rounded-circle me-3' src={user?.photoURL} alt="" />
+                                    :
+                                    <FaUser className='me-3' style={{ fontSize: '2rem' }}></FaUser>
+                            }
                             {user?.email ?
 
                                 <Button className='fw-semibold' onClick={handleLogOut} variant="primary">logOut</Button>
@@ -49,13 +57,6 @@ const Header = () => {
                                 <Button variant="primary">
                                     <Link className='text-white text-decoration-none fw-semibold' to='/login'>Login</Link>
                                 </Button>
-                            }
-
-                            {
-                                user ?
-                                    <img style={{ width: '50px', height: '40px' }} title={user?.displayName} className='rounded-circle ms-3' src={user?.photoURL} alt="" />
-                                    :
-                                    <FaUser className='ms-3' style={{ fontSize: '2rem' }}></FaUser>
                             }
 
                         </Form>

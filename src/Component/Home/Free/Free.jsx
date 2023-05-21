@@ -7,7 +7,9 @@ const Free = () => {
     return (
         <div className='gallery-title'>
             <div className='row row-cols-1 row-cols-md-2 g-4'>
-                <div className="col">
+                <div className="col" data-aos="fade-down"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="2000">
                     <div className='card bg-info p-4'>
                         <div className='row'>
                             <div className="card-body col-8">
@@ -21,7 +23,9 @@ const Free = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col">
+                <div className="col" data-aos="fade-up"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="2000">
                     <div className='card bg-warning p-4'>
                         <div className='row'>
                             <div className="card-body col-8">

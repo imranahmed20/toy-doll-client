@@ -13,7 +13,7 @@ const Baby = ({ baby }) => {
                     <p className="fw-semibold mb-2 mt-3 fs-5">Price: ${price}</p>
                     <p className='fw-semibold fs-5'>Rating: {rating} <FaStar className='text-warning'></FaStar> <FaStar className='text-warning'></FaStar> <FaStar className='text-warning'></FaStar> <FaStar className='text-warning'></FaStar><FaStarHalfAlt className='text-warning'></FaStarHalfAlt></p>
                     <Link to={`/categories/${_id}`}>
-                        <button className='btn btn-success fw-semibold'>View Detail</button>
+                        <button className='btn btn-success fw-semibold'>View Details</button>
                     </Link>
                 </div>
             </div>

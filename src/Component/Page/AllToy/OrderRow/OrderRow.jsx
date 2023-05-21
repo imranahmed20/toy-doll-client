@@ -13,7 +13,7 @@ const OrderRow = ({ order }) => {
             <td>{quantity}</td>
             <td>
                 <Link to={`/orders/${_id}`}>
-                    <button className='btn btn-success fw-semibold'>View Detail</button>
+                    <button className='btn btn-success fw-semibold'>View Details</button>
                 </Link>
             </td>
         </tr>
