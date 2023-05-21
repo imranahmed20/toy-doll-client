@@ -34,10 +34,11 @@ const Header = () => {
                             <Link className='fw-semibold me-3 text-decoration-none mt-2 text-dark' to='/'>Home</Link>
                             <Link className='fw-semibold me-3 text-decoration-none mt-2 text-dark' to='/allToy'>All Toys</Link>
                             <Link className='fw-semibold me-3 text-decoration-none mt-2 text-dark' to='/addToy'>Add A Toy</Link>
-                            {
-                                user?.email ? < Link className='fw-semibold text-decoration-none mt-2 text-dark me-3' to='/myToy'>My Toy</Link> :
-                                    <>< Link className='fw-semibold text-decoration-none mt-2  text-dark me-3' to='/myToy'>My Toy</Link></>
-                            }
+                            <Link className='fw-semibold text-decoration-none mt-2 text-dark'>
+                                {   
+                                    user?.email ? < Link className='fw-semibold text-decoration-none mt-2 text-dark me-3' to='/myToy'>My Toy</Link> :
+                                        <>< Link className='fw-semibold text-decoration-none mt-2  text-dark me-3' to='/myToy'>My Toy</Link></>
+                                }</Link>
                             <Link className='fw-semibold me-0 text-decoration-none mt-2 text-dark' to='/blog'>Blog</Link>
 
                         </Nav>
